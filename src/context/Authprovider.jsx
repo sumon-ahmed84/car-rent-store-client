@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged,
 import { auth } from '../firebase/firebase.config';
 
 
+
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
