@@ -74,13 +74,13 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/all-models"}>
-              <IoLogoModelS /> All Models
+            <NavLink to={"/browsecars"}>
+              <IoLogoModelS /> Browse Cars
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/add-model"}>
-             <ImBoxAdd /> Add model
+            <NavLink to={"/add-car"}>
+             <ImBoxAdd /> Add Car
             </NavLink>
           </li>
 {/* 
