@@ -93,7 +93,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-3">
         {user ? (
-          <div className="dropdown dropdown-end z-50">
+          <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
               role="button"
@@ -109,9 +109,9 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
+              className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-58 p-2 shadow "
             >
-              <div className=" pb-3 border-b border-b-gray-200">
+              <div className=" w-full pb-3 border-b border-b-gray-200">
                 <li className="text-sm font-bold">{user.displayName}</li>
                 <li className="text-xs">{user.email}</li>
               </div>

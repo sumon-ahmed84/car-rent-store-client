@@ -7,7 +7,7 @@ import { AuthContext } from "../context/AuthContext";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { login, googleLogin } = use(AuthContext);
+  const { signInUser,signInWithGoogle} = use(AuthContext);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
 
@@ -22,7 +22,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(formData.email, formData.password);
+      await signInUser(formData.email, formData.password);
       navigate(from, { replace: true });
     } catch (error) {
       toast.error(error.message);
@@ -31,7 +31,7 @@ const Login = () => {
 
   const handleGoogle = async () => {
     try {
-      await googleLogin();
+      await signInWithGoogle();
       navigate(from, { replace: true });
     } catch (error) {
       toast.error(error.message);

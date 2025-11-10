@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-  const { signup, googleLogin } = use(AuthContext);
+  const { signInWithGoogle,signInUser} = use(AuthContext);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,7 +34,7 @@ const Register = () => {
       );
     }
     try {
-      await signup(
+      await signInUser(
         formData.email,
         formData.password,
         formData.name,
@@ -48,7 +48,7 @@ const Register = () => {
 
   const handleGoogle = async () => {
     try {
-      await googleLogin();
+      await signInWithGoogle();
       navigate("/");
     } catch (error) {
       toast.error(error.message);

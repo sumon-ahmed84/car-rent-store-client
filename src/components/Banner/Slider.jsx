@@ -7,7 +7,7 @@ import "swiper/css/navigation"
 
 const Slider = () => {
   return (
-    <div className="py-4 z-0 ">
+    <div className="py-4 z-0 relative">
     <Swiper
       spaceBetween={40}
       modules={[Navigation, Autoplay]}

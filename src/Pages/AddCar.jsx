@@ -13,15 +13,16 @@ const AddCar = () => {
 
     const formData = {
       name: e.target.name.value,
-      category: e.target.category.value,
+      brand: e.target.category.value,
+        price_per_day: e.target.price.value,
+        location: e.target.location.value,
+        provider_name: user.displayName,
       description: e.target.description.value,
-      thumbnail: e.target.thumbnail.value,
-      created_at: new Date(),
-      downloads: 0,
-      created_by: user.email
+      image: e.target.image.value,
+      email: user.email
     }
 
-    fetch('https://3d-model-server.vercel.app/models', {
+    fetch('http://localhost:3000/all_cars', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,6 +36,7 @@ const AddCar = () => {
     })
     .catch(err => {
       console.log(err)
+        toast.error("Failed to add the car.")
     })
    
 
@@ -42,7 +44,7 @@ const AddCar = () => {
 
 
   return (
-    <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
+    <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl my-8">
       <div className="card-body p-6 relative">
         <h2 className="text-2xl font-bold text-center mb-6">Add New Car</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -51,12 +53,32 @@ const AddCar = () => {
             <label className="label font-medium">Name</label>
             <input
               type="text"
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              readOnly
+              defaultValue={user.displayName}
+            />
+          </div>
+          <div>
+            <label className="label font-medium">Email</label>
+            <input
+              type="text"
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              readOnly
+              defaultValue={user.email}
+            />
+            
+          </div>
+          <div>
+            <label className="label font-medium">Car Name</label>
+            <input
+              type="text"
               name="name"
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-              placeholder="Enter name"
+              placeholder="Enter car name"
             />
           </div>
+
 
           {/* Category Dropdown */}
           <div>
@@ -78,6 +100,28 @@ const AddCar = () => {
             </select>
           </div>
 
+          <div>
+            <label className="label font-medium">Price($/day)</label>
+            <input
+              type="text"
+              name="price"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter price"
+            />
+          </div>
+
+          <div>
+            <label className="label font-medium">Location</label>
+            <input
+              type="text"
+              name="location"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter location"
+            />
+          </div>
+
           {/* Description Textarea */}
           <div>
             <label className="label font-medium">Description</label>
@@ -90,12 +134,12 @@ const AddCar = () => {
             ></textarea>
           </div>
 
-          {/* Thumbnail URL */}
+          {/* img URL */}
           <div>
-            <label className="label font-medium">Thumbnail URL</label>
+            <label className="label font-medium">Image URL</label>
             <input
               type="url"
-              name="thumbnail"
+              name="image"
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="https://example.com/image.jpg"
