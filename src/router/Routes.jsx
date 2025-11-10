@@ -7,6 +7,7 @@ import NotFound from "../Pages/Notfound";
 import Login from "../Pages/Login";
 import BrowseCars from "../Pages/BrowseCars";
 import AddCar from "../Pages/AddCar";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -26,7 +27,11 @@ export const router = createBrowserRouter([
       },
       {
         path:"/add-car",
-        element:<AddCar></AddCar>
+        element:<PrivateRoute to="/login"><AddCar></AddCar></PrivateRoute>
+      },
+      {
+        path:"/cardetails/:id",
+        element:<PrivateRoute to="/login"></PrivateRoute>,
       },
       {
         path: "/login",
