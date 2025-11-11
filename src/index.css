@@ -17,5 +17,5 @@
     font-family: "Poppins", sans-serif;
 }
      a.active{
-  @apply  font-semibold text-green-500;
+  @apply  font-semibold text-pink-500;
 }
