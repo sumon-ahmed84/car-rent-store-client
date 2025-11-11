@@ -22,7 +22,7 @@ const CarCards = ({car}) => {
         
         <div className="card-actions justify-between items-center mt-4">
           
-          <Link to={`/model-details/${_id}`} className="btn rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white w-full btn-sm">View Details</Link>
+          <Link to={`/cardetails/${_id}`} className="btn rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white w-full btn-sm">View Details</Link>
         </div>
       </div>
     </div>
