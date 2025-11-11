@@ -1,4 +1,4 @@
-// ...existing code...
+
 import React from "react";
 import { useLoaderData } from "react-router";
 import CarCards from "../components/CarCards";
@@ -6,7 +6,6 @@ import CarCards from "../components/CarCards";
 const BrowseCars = () => {
   const data = useLoaderData();
 
-  // Normalize loader result to an array (support responses like { cars: [...] } or { data: [...] } or plain array)
   const cars = Array.isArray(data) ? data : data?.cars ?? data?.data ?? [];
 
   return (
@@ -27,7 +26,7 @@ const BrowseCars = () => {
 };
 
 export default BrowseCars;
-// ...existing code...
+
 
 
 

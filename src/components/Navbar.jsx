@@ -83,6 +83,11 @@ const Navbar = () => {
              <ImBoxAdd /> Add Car
             </NavLink>
           </li>
+          <li>
+            <NavLink to={"/my-list"}>
+              My list
+            </NavLink>
+          </li>
 {/* 
           <li>
             <NavLink to={"/profile"}>

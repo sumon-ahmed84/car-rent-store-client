@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 
 import { toast } from "react-toastify";
 import { Navigate, useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
 const AddCar = () => {
   const { user } = use(AuthContext);
@@ -20,7 +21,14 @@ const AddCar = () => {
       provider_name: user.displayName,
       description: e.target.description.value,
       image: e.target.image.value,
+      created_at: new Date(),
+      contact_number: e.target.contact_number.value,
+      seats: e.target.seats.value,
+      status: "Available",
+      fuel_type: "Petrol",
+      transmission: "Automatic",
       email: user.email,
+      review: e.target.review.value,
     };
 
     fetch("http://localhost:3000/all_cars", {
@@ -32,7 +40,11 @@ const AddCar = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("Car added successfully!");
+        Swal.fire({
+          title: "Car added successfully!",
+          icon: "success",
+          draggable: true,
+        });
         console.log(data);
         e.target.reset();
         navigate("/browsecars");
@@ -68,6 +80,26 @@ const AddCar = () => {
             />
           </div>
           <div>
+            <label className="label font-medium">Contact Number</label>
+            <input
+              type="text"
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              name="contact_number"
+              placeholder="Enter contact number"
+              required
+            />
+          </div>
+          <div>
+            <label className="label font-medium">Seats</label>
+            <input
+              type="text"
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              name="seats"
+              placeholder="Enter number of seats"
+              required
+            />
+          </div>
+          <div>
             <label className="label font-medium">Car Name</label>
             <input
               type="text"
@@ -75,6 +107,16 @@ const AddCar = () => {
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="Enter car name"
+            />
+          </div>
+          <div>
+            <label className="label font-medium">Review</label>
+            <input
+              type="text"
+              name="review"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter car review"
             />
           </div>
 
