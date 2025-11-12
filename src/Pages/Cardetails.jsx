@@ -12,7 +12,7 @@ const Cardetails = () => {
         <div className="max-w-7xl mx-auto px-4 py-6">
             <Link className="btn btn-outline" to="/browsecars"><IoMdArrowRoundBack /> Back</Link>
             <div className="max-w-4xl mx-auto  bg-white rounded-lg shadow-md my-8 relative">
-            <img src={image} alt={name} className="w-full rounded-t-lg h-80 object-cover mb-4" />
+            <img src={image} alt={name} className=" rounded-t-lg  object-cover mb-4  h-full w-full overflow-hidden" />
             <p className="text-lg rounded-lg bg-pink-400 text-white absolute top-4 right-4 p-2"> {status}</p>
             <div className="p-6">
             <h1 className="text-2xl font-bold mb-4">{name}</h1>

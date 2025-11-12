@@ -28,7 +28,7 @@ const AddCar = () => {
       fuel_type: "Petrol",
       transmission: "Automatic",
       email: user.email,
-      review: e.target.review.value,
+      rating: e.target.rating.value,
     };
 
     fetch("http://localhost:3000/all_cars", {
@@ -110,13 +110,13 @@ const AddCar = () => {
             />
           </div>
           <div>
-            <label className="label font-medium">Review</label>
+            <label className="label font-medium">Rating</label>
             <input
               type="text"
-              name="review"
+              name="rating"
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-              placeholder="Enter car review"
+              placeholder="Enter car rating"
             />
           </div>
 
