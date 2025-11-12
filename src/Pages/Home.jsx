@@ -12,7 +12,7 @@ const Home = () => {
     ? data
     : data?.result ?? data?.cars ?? data?.data ?? [];
 
-  const [cars, setModels] = useState(initialCars);
+  const [cars, setcars] = useState(initialCars);
   const [loading, setLoading] = useState(false);
 
   const handleSearch = (e) => {
@@ -25,7 +25,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         const results = Array.isArray(data) ? data : data?.result ?? data?.cars ?? data?.data ?? [];
-        setModels(results);
+        setcars(results);
         setLoading(false);
       });
   };
@@ -56,10 +56,10 @@ const Home = () => {
                 <path d="m21 21-4.3-4.3"></path>
               </g>
             </svg>
-            <input name="search" type="search" placeholder="Search" />
+            <input name="search" type="search" placeholder="Search"  />
           </label>
           <button className="btn btn-secondary rounded-full">
-            {loading ? "Searching...." : "Search"}
+            {loading ? <div className="loader"></div> : "Search"}
           </button>
         </form>
 

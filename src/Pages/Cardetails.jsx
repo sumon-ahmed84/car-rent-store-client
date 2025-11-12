@@ -8,8 +8,8 @@ import { Navigate } from "react-router";
 
 const Cardetails = () => {
   const data = useLoaderData();
-  const promisdata = data.result,
-    {
+  const promisdata = data.result;
+   var {
       transmission,
       fuel_type,
       seats,

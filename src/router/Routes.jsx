@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import Cardetails from "../Pages/Cardetails";
 import MyList from "../Pages/MyList";
 import MyBooking from "../Pages/MyBooking";
+import UpdateCar from "../Pages/UpdateCar";
 
 
 export const router = createBrowserRouter([
@@ -38,6 +39,11 @@ export const router = createBrowserRouter([
         element:<PrivateRoute to="/login"> <Cardetails></Cardetails></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:3000/all_cars/${params.id}`)
 
+      },
+      {
+        path:"/update-car/:id",
+        element:<PrivateRoute to="/login"><UpdateCar></UpdateCar></PrivateRoute>,
+        loader: ({params})=> fetch(`http://localhost:3000/all_cars/${params.id}`)
       },
       {
         path: "/my-list",
