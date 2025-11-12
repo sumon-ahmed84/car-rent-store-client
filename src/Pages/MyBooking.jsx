@@ -17,7 +17,7 @@ const MyBooking = () => {
   }, [user]);
 
   if (loading) {
-    return <div class="loader"></div>;
+    return <div className="loader"></div>;
   }
 
   return (

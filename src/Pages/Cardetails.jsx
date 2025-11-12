@@ -1,10 +1,10 @@
 import React, { use } from "react";
 import { BsFillCartFill, BsFuelPump, BsPeopleFill } from "react-icons/bs";
 import { IoIosSettings, IoMdArrowRoundBack } from "react-icons/io";
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import Swal from "sweetalert2";
-import { Navigate } from "react-router";
+
 
 const Cardetails = () => {
   const data = useLoaderData();
@@ -23,6 +23,7 @@ const Cardetails = () => {
       provider_name,
     } = promisdata;
   const { user } = use(AuthContext);
+  const navigate=useNavigate()
 
   const handleBookNow = () => {
     const promisedata = {
@@ -53,7 +54,7 @@ const Cardetails = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        <Navigate to="/my-booking" />;
+        navigate("/my-booking")
         Swal.fire({
           title: "Booking Successful!",
           icon: "success",

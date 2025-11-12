@@ -1,7 +1,8 @@
 import React, { use, useRef } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const MyaddedcarCard = ({ car }) => {
   const {
@@ -20,14 +21,13 @@ const MyaddedcarCard = ({ car }) => {
   } = car;
   const { user } = use(AuthContext);
 
+  const navigate=useNavigate();
+
   const bidModalref = useRef(null);
 
   const handleModalopen = () => {
     bidModalref.current.showModal();
   };
-
-
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,6 +68,49 @@ const MyaddedcarCard = ({ car }) => {
       });
   };
 
+  const handaledelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+         fetch(`http://localhost:3000/all_cars/${_id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+     
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Server error: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        navigate("/browsecars")
+         Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+        bidModalref.current?.close();
+      })
+      .catch((err) => {
+        console.error("Update failed:", err);
+        toast.error("Failed to update car: " + err.message);
+      });
+
+       
+      }
+    });
+  };
 
   return (
     <div>
@@ -230,7 +273,10 @@ const MyaddedcarCard = ({ car }) => {
             >
               Update
             </Link>
-            <Link className="btn rounded-md bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white btn-sm">
+            <Link
+              onClick={handaledelete}
+              className="btn rounded-md bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white btn-sm"
+            >
               Delete
             </Link>
           </div>
