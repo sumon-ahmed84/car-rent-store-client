@@ -4,6 +4,7 @@ import { IoIosSettings, IoMdArrowRoundBack } from "react-icons/io";
 import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import Swal from "sweetalert2";
+import { Navigate } from "react-router";
 
 const Cardetails = () => {
   const data = useLoaderData();
@@ -24,16 +25,35 @@ const Cardetails = () => {
   const { user } = use(AuthContext);
 
   const handleBookNow = () => {
-    fetch("http://localhost:3000/bookings", {
+    const promisedata = {
+      name: promisdata.name,
+      fuel_type: promisdata.fuel_type,
+      transmission: promisdata.transmission,
+      seats: promisdata.seats,
+      contact_number: promisdata.contact_number,
+      email: promisdata.email,
+      provider_name: promisdata.provider_name,
+      location: promisdata.location,
+      description: promisdata.description,
+      status: promisdata.status,
+      brand: promisdata.brand,
+      image: promisdata.image,
+      price_per_day: promisdata.price_per_day,
+      created_at: new Date(),
+      booked_by: user.email,
+
+    };
+    fetch(`http://localhost:3000/bookings/${promisedata._id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...promisdata, boking_by: user.email }),
+      body: JSON.stringify(promisedata),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        <Navigate to="/my-booking" />;
         Swal.fire({
           title: "Booking Successful!",
           icon: "success",
