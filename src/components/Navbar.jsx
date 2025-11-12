@@ -55,8 +55,23 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/all-models"}>
-                <IoLogoModelS /> All Models
+              <NavLink to={"/browsecars"}>
+                <IoLogoModelS /> Browse Cars
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/add-car"}>
+                <IoLogoModelS /> Add Car
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/my-list"}>
+                <IoLogoModelS /> My List
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/my-booking"}>
+                <IoLogoModelS /> My Booking
               </NavLink>
             </li>
           </ul>
@@ -85,15 +100,14 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink to={"/my-list"}>
-              My list
+              My List
             </NavLink>
           </li>
-{/* 
           <li>
-            <NavLink to={"/profile"}>
-              <FaUser /> Profile
+            <NavLink to={"/my-booking"}>
+              My Booking
             </NavLink>
-          </li> */}
+          </li>
         </ul>
       </div>
       <div className="navbar-end gap-3">
@@ -121,20 +135,20 @@ const Navbar = () => {
                 <li className="text-xs">{user.email}</li>
               </div>
               <li className="mt-3">
-                <Link to={"/profile"}>
+                <Link to={"/"}>
                   <FaUser /> Profile
                 </Link>
               </li>
 
               <li>
-                <Link to={"/my-models"}>
-                  My Models
+                <Link to={"/my-booking"}>
+                  My Booking
                 </Link>
               </li>
 
               <li >
-                <Link to={"/my-downloads"}>
-                 My Downloads
+                <Link to={"/my-list"}>
+                 My List
                 </Link>
               </li>
 
@@ -184,10 +198,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
 
 
 

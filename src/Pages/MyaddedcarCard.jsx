@@ -4,12 +4,12 @@ import { Link } from 'react-router';
 const MyaddedcarCard = ({ car }) => {
     const { _id, image, name, description, price_per_day, provider_name,status } = car;
   return (
-    <div className=" card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-110 transition-transform duration-300 relative">
+    <div className=" rounded-2xl card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-110 transition-transform duration-300 relative">
       
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover "
+          className="w-full h-full object-cover rounded-t-2xl "
         />
       <p className="text-lg rounded-lg bg-pink-400 text-white absolute top-4 right-4 p-2">{status}</p>
       <div className="card-body">

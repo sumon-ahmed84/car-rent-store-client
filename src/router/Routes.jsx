@@ -10,6 +10,7 @@ import AddCar from "../Pages/AddCar";
 import PrivateRoute from "./PrivateRoute";
 import Cardetails from "../Pages/Cardetails";
 import MyList from "../Pages/MyList";
+import MyBooking from "../Pages/MyBooking";
 
 
 export const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: "/my-list",
         element: <PrivateRoute to="/login"><MyList /></PrivateRoute>,
+      },
+      {
+        path: "/my-booking",
+        element: <PrivateRoute to="/login"><MyBooking /></PrivateRoute>,
       },
       {
         path: "/login",
