@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import Cardetails from "../Pages/Cardetails";
 import MyList from "../Pages/MyList";
 import MyBooking from "../Pages/MyBooking";
+import Toprated from "../components/Toprated";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,11 @@ export const router = createBrowserRouter([
         path:"/browsecars",
         element: <BrowseCars></BrowseCars>,
         loader: ()=> fetch('http://localhost:3000/all_cars')
+      },
+      {
+        path:"/toprate",
+        element:<Toprated></Toprated>,
+        loader:()=>fetch('http://localhost:3000/toprated'),
       },
       {
         path:"/add-car",

@@ -38,10 +38,6 @@ const Login = () => {
     }
   };
 
-//   const handleForgotPassword = () => {
-//     if (!formData.email) return toast.error("Enter your email first");
-//     forgotPassword(formData.email);
-//   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-green-50">
