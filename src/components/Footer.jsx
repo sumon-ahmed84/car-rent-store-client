@@ -4,6 +4,7 @@ import {
 } from 'lucide-react';
 import { FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { MdFacebook } from 'react-icons/md';
+import logo from "../assets/Logo.png"
 
 
 const Footer = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
         <div>
           <div className="flex items-center space-x-2 text-white">
-         <img src="/src/assets/Logo.png" className="rounded-full size-8" />
+         <img src={logo} className="rounded-full size-8" />
       <span className="text-xl font-bold text-gray-800 dark:text-gray-200">RentWheels</span>
     </div>
           <ul className="space-y-2 mt-4">

@@ -6,6 +6,15 @@ import { IoLocationOutline } from "react-icons/io5";
 import { BiSupport } from "react-icons/bi";
 import { FaStar } from "react-icons/fa6";
 import Toprated from "../components/Toprated";
+import car1 from "../assets/suv.png";
+import car2 from "../assets/truck.png";
+import car3 from "../assets/sedan.png";
+import car4 from "../assets/luxurysedan.png";
+import review1 from "../assets/thumb-image-1.png";
+import review2 from "../assets/thumb-image-2.png";
+
+
+
 
 
 
@@ -91,7 +100,7 @@ const Home = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="rounded shadow p-6 w-full hover:scale-105 duration-300 hover:shadow-lg">
             <img
-              src="../assets/suv.png"
+              src={car1}
               className="w-full max-h-16"
               alt="SUV"
             />
@@ -100,7 +109,7 @@ const Home = () => {
 
           <div className="rounded shadow p-6 w-full hover:scale-105 duration-300 hover:shadow-lg">
             <img
-              src="../assets/sedan.png"
+              src={car2}
               className="w-full max-h-16"
               alt="Sedan"
             />
@@ -109,7 +118,7 @@ const Home = () => {
 
           <div className="rounded shadow p-6 w-full hover:scale-105 duration-300 hover:shadow-lg">
             <img
-              src="../assets/truck.png"
+              src={car3}
               className="w-full max-h-16"
               alt="Truck"
             />
@@ -118,7 +127,7 @@ const Home = () => {
 
           <div className="rounded shadow p-6 w-full hover:scale-105 duration-300 hover:shadow-lg">
             <img
-              src="../assets/luxurysedan.png"
+              src={car4}
               className="w-full max-h-16"
               alt="Luxury Sedan"
             />
@@ -189,7 +198,7 @@ const Home = () => {
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center space-x-4">
               <img
-                src="../assets/thumb-image-1.png" 
+                src={review1} 
                 alt="Jonathan Blue"
                 className="w-12 h-12 rounded-full object-cover"
               />
@@ -217,7 +226,7 @@ const Home = () => {
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center space-x-4">
               <img
-                src="../assets/thumb-image-2.png" 
+                src={review2}
                 alt="Jonathan Blue"
                 className="w-12 h-12 rounded-full object-cover"
               />

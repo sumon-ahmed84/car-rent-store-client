@@ -7,6 +7,7 @@ import { LuRotate3D } from "react-icons/lu";
 import { ImBoxAdd } from "react-icons/im";
 import { use, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
+import logo from "../assets/Logo.png"
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -77,7 +78,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to={"/"} className="flex items-center gap-1 text-xl font-bold">
-          <img src="/src/assets/Logo.png" className="h-8 rounded-2xl" /> RentWheels
+          <img src={logo} className="h-8 rounded-2xl" /> RentWheels
         </Link>
       </div>
       <div className="navbar-center hidden md:flex">
