@@ -31,7 +31,7 @@ const AddCar = () => {
       rating: e.target.rating.value,
     };
 
-    fetch("http://localhost:3000/all_cars", {
+    fetch("https://car-rent-server-blond.vercel.app/all_cars", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

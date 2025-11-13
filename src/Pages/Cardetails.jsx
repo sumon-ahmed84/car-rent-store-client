@@ -37,7 +37,7 @@ const Cardetails = () => {
       return;
     }
 
-    fetch("http://localhost:3000/bookings", {
+    fetch("https://car-rent-server-blond.vercel.app/bookings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...carData, booking_by: user.email }),

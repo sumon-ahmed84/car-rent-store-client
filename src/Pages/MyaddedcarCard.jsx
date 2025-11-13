@@ -44,7 +44,7 @@ const MyaddedcarCard = ({ car }) => {
       rating: e.target.rating.value,
     };
 
-    fetch(`http://localhost:3000/all_cars/${_id}`, {
+    fetch(`https://car-rent-server-blond.vercel.app/all_cars/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const MyaddedcarCard = ({ car }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-         fetch(`http://localhost:3000/all_cars/${_id}`, {
+         fetch(`https://car-rent-server-blond.vercel.app/all_cars/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

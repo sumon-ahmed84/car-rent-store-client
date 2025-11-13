@@ -34,7 +34,7 @@ const Home = () => {
     console.log(search_text);
     setLoading(true);
 
-    fetch(`http://localhost:3000/search?search=${search_text}`)
+    fetch(`https://car-rent-server-blond.vercel.app/search?search=${search_text}`)
       .then((res) => res.json())
       .then((data) => {
         const results = Array.isArray(data)

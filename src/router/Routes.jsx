@@ -23,17 +23,17 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:3000/FeaturedCars'),
+        loader: ()=> fetch('https://car-rent-server-blond.vercel.app/FeaturedCars'),
       },
       {
         path:"/browsecars",
         element: <BrowseCars></BrowseCars>,
-        loader: ()=> fetch('http://localhost:3000/all_cars')
+        loader: ()=> fetch('https://car-rent-server-blond.vercel.app/all_cars')
       },
       {
         path:"/toprate",
         element:<Toprated></Toprated>,
-        loader:()=>fetch('http://localhost:3000/toprated'),
+        loader:()=>fetch('https://car-rent-server-blond.vercel.app/toprated'),
       },
       {
         path:"/add-car",
@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
       {
         path:"/cardetails/:id",
         element:<PrivateRoute to="/login"> <Cardetails></Cardetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:3000/all_cars/${params.id}`)
+        loader: ({params})=> fetch(`https://car-rent-server-blond.vercel.app/all_cars/${params.id}`)
 
       },
       

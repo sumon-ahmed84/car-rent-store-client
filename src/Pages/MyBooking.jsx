@@ -10,7 +10,7 @@ const MyBooking = () => {
   useEffect(() => {
     if (!user?.email) return; 
 
-    fetch(`http://localhost:3000/my_bookings?email=${user.email}`)
+    fetch(`https://car-rent-server-blond.vercel.app/my_bookings?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched bookings:", data);

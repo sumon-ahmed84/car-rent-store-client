@@ -9,7 +9,7 @@ const MyList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/my_cars?email=${user.email}`)
+    fetch(`https://car-rent-server-blond.vercel.app/my_cars?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyCars(data.result);
