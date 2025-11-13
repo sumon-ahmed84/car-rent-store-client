@@ -7,6 +7,8 @@ import { BiSupport } from "react-icons/bi";
 import { FaStar } from "react-icons/fa6";
 import Toprated from "../components/Toprated";
 
+
+
 const Home = () => {
   const data = useLoaderData();
 
@@ -89,7 +91,7 @@ const Home = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="rounded shadow p-6 w-full hover:scale-105 duration-300 hover:shadow-lg">
             <img
-              src="/src/assets/suv.png"
+              src="../assets/suv.png"
               className="w-full max-h-16"
               alt="SUV"
             />
@@ -98,7 +100,7 @@ const Home = () => {
 
           <div className="rounded shadow p-6 w-full hover:scale-105 duration-300 hover:shadow-lg">
             <img
-              src="/src/assets/sedan.png"
+              src="../assets/sedan.png"
               className="w-full max-h-16"
               alt="Sedan"
             />
@@ -107,7 +109,7 @@ const Home = () => {
 
           <div className="rounded shadow p-6 w-full hover:scale-105 duration-300 hover:shadow-lg">
             <img
-              src="/src/assets/truck.png"
+              src="../assets/truck.png"
               className="w-full max-h-16"
               alt="Truck"
             />
@@ -116,7 +118,7 @@ const Home = () => {
 
           <div className="rounded shadow p-6 w-full hover:scale-105 duration-300 hover:shadow-lg">
             <img
-              src="/src/assets/luxurysedan.png"
+              src="../assets/luxurysedan.png"
               className="w-full max-h-16"
               alt="Luxury Sedan"
             />
@@ -187,7 +189,7 @@ const Home = () => {
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center space-x-4">
               <img
-                src="/src/assets/thumb-image-2.png" 
+                src="../assets/thumb-image-1.png" 
                 alt="Jonathan Blue"
                 className="w-12 h-12 rounded-full object-cover"
               />
@@ -215,7 +217,7 @@ const Home = () => {
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center space-x-4">
               <img
-                src="/src/assets/thumb-image-1.png" 
+                src="../assets/thumb-image-2.png" 
                 alt="Jonathan Blue"
                 className="w-12 h-12 rounded-full object-cover"
               />
